@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pastor David Johnson - Guiding Youth to Purpose</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Navigation */
+        nav {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav h1 {
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+
+        nav a:hover {
+            opacity: 0.8;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4rem 1rem;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* Sections */
+        section {
+            padding: 4rem 1rem;
+        }
+
+        section h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: #667eea;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .about-image {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+        }
+
+        /* Book Section */
+        .book-showcase {
+            background: #f8f9fa;
+            padding: 3rem 2rem;
+            border-radius: 15px;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .book-cover {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .book-info h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        /* Community Gallery */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            height: 250px;
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        /* Contact Section */
+        .contact-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .contact-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .contact-card h3 {
+            margin-bottom: 1rem;
+            color: #667eea;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 0.8rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+        }
+
+        button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: transform 0.3s;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+        }
+
+        .whatsapp-btn {
+            background: #25D366;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Chapter Selection Grid */
+        .chapters-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            padding: 2rem 0;
+        }
+
+        .chapter-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .chapter-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .chapter-card-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+        }
+
+        .chapter-card-content {
+            padding: 1.5rem;
+        }
+
+        .chapter-card-content h4 {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .chapter-card-content p {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* Book Reader */
+        .book-reader {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: white;
+            z-index: 200;
+            overflow-y: auto;
+        }
+
+        .book-reader.active {
+            display: block;
+        }
+
+        .reader-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .menu-icon {
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            width: 40px;
+            height: 40px;
+            border-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .close-reader {
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .chapter-menu {
+            position: fixed;
+            top: 60px;
+            left: -300px;
+            width: 280px;
+            height: calc(100% - 60px);
+            background: white;
+            box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+            transition: left 0.3s;
+            overflow-y: auto;
+            z-index: 9;
+        }
+
+        .chapter-menu.active {
+            left: 0;
+        }
+
+        .chapter-menu ul {
+            list-style: none;
+            padding: 1rem 0;
+        }
+
+        .chapter-menu li {
+            padding: 1rem 1.5rem;
+            cursor: pointer;
+            border-bottom: 1px solid #eee;
+            transition: background 0.3s;
+        }
+
+        .chapter-menu li:hover, .chapter-menu li.active {
+            background: #f8f9fa;
+            color: #667eea;
+        }
+
+        .reader-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .chapter-content h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: #667eea;
+        }
+
+        .media-section {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+
+        .media-section h4 {
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .media-placeholder {
+            background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
+            height: 200px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+
+            .hero h2 {
+                font-size: 2rem;
+            }
+
+            .about-content, .book-showcase {
+                grid-template-columns: 1fr;
+            }
+
+            .book-cover {
+                height: 300px;
+            }
+
+            section {
+                padding: 2rem 1rem;
+            }
+
+            .chapter-menu {
+                width: 100%;
+                left: -100%;
+            }
+
+            .chapter-menu.active {
+                left: 0;
+            }
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <h1>Pastor David</h1>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#book">Book</a></li>
+                <li><a href="#community">Community</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h2>Guiding the Next Generation</h2>
+            <p>Empowering teenagers and young adults to discover their purpose and walk in faith</p>
+            <a href="#book" class="btn">Explore the Book</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2>About Pastor David Johnson</h2>
+            <div class="about-content">
+                <div class="about-image">👨‍🏫</div>
+                <div>
+                    <p style="margin-bottom: 1rem;">Pastor David Johnson has dedicated over 15 years to youth ministry, touching the lives of thousands of teenagers and young adults across the nation. His passion for mentoring the next generation stems from his own transformative journey as a young believer.</p>
+                    <p style="margin-bottom: 1rem;">With a heart for teaching practical faith principles, Pastor David combines biblical wisdom with real-world application, making complex spiritual concepts accessible and relevant to today's youth.</p>
+                    <p>Through his ministry, outreach programs, and now this book, he continues to inspire young people to live purposefully and embrace their God-given potential.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Book Section -->
+    <section id="book">
+        <div class="container">
+            <h2>Featured Book</h2>
+            <div class="book-showcase">
+                <div class="book-cover">📖</div>
+                <div class="book-info">
+                    <h3>Finding Your Path: A Youth Guide to Purpose</h3>
+                    <p style="margin-bottom: 1rem;"><strong>For Teenagers & Young Adults</strong></p>
+                    <p style="margin-bottom: 1.5rem;">This transformative guide addresses the real questions young people face today: Who am I? What's my purpose? How do I navigate life's challenges while staying true to my faith? Through 12 powerful chapters, Pastor David shares practical wisdom, personal stories, and biblical insights that will help you discover and walk in your divine purpose.</p>
+                    <button onclick="openBook()" class="btn">Read the Book</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Section -->
+    <section id="community" style="background: #f8f9fa;">
+        <div class="container">
+            <h2>Community Impact</h2>
+            <p style="text-align: center; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">Through outreach programs, youth camps, and community engagement, we're making a lasting impact in the lives of young people.</p>
+            <div class="gallery">
+                <div class="gallery-item">🙏</div>
+                <div class="gallery-item">👥</div>
+                <div class="gallery-item">📚</div>
+                <div class="gallery-item">🎤</div>
+                <div class="gallery-item">🤝</div>
+                <div class="gallery-item">⛪</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2>Get in Touch</h2>
+            <div class="contact-options">
+                <div class="contact-card">
+                    <h3>Send a Message</h3>
+                    <form onsubmit="handleSubmit(event)">
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                        <textarea rows="5" placeholder="Your Message" required></textarea>
+                        <button type="submit">Send Message</button>
+                    </form>
+                </div>
+                <div class="contact-card">
+                    <h3>Connect on WhatsApp</h3>
+                    <p style="margin-bottom: 2rem;">Have a quick question or need prayer? Reach out directly on WhatsApp for a faster response.</p>
+                    <a href="https://wa.me/1234567890" class="btn whatsapp-btn" target="_blank">
+                        💬 Message on WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Pastor David Johnson. All rights reserved.</p>
+            <p style="margin-top: 0.5rem;">Empowering Youth | Building Faith | Transforming Lives</p>
+        </div>
+    </footer>
+
+    <!-- Chapter Selection View -->
+    <div class="book-reader" id="chapterSelection">
+        <div class="reader-header">
+            <h2 style="font-size: 1.2rem;">Select a Chapter</h2>
+            <button class="close-reader" onclick="closeChapterSelection()">✕ Close</button>
+        </div>
+        
+        <div class="reader-content">
+            <div class="chapters-grid" id="chaptersGrid">
+                <!-- Chapters will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Book Reader -->
+    <div class="book-reader" id="bookReader" style="display: none;">
+        <div class="reader-header">
+            <button class="menu-icon" onclick="toggleChapterMenu()">☰</button>
+            <h2 style="font-size: 1.2rem;">Finding Your Path</h2>
+            <button class="close-reader" onclick="closeBook()">✕ Close</button>
+        </div>
+        
+        <div class="chapter-menu" id="chapterMenu">
+            <ul id="chapterList"></ul>
+        </div>
+
+        <div class="reader-content" id="readerContent">
+            <!-- Chapter content will be loaded here -->
+        </div>
+    </div>
+
+    <script>
+        const chapters = [
+            {
+                id: 1,
+                title: "Chapter 1: Discovering Your Identity",
+                emoji: "🔍",
+                description: "Understanding who you are is the foundation of discovering your purpose. Learn how to embrace your unique identity in Christ.",
+                content: `
+                    <h3>Discovering Your Identity</h3>
+                    <p>Understanding who you are is the foundation of discovering your purpose. Many young people struggle with identity, trying to fit into molds created by society, peers, or social media. But your true identity comes from understanding how God sees you.</p>
+                    
+                    <p>In this chapter, we'll explore three key truths about your identity:</p>
+                    
+                    <p><strong>1. You Are Uniquely Created</strong><br>
+                    Before you were born, God had a plan for your life. You're not an accident or a mistake. Every aspect of who you are—your personality, talents, and even your quirks—were designed with intention. When you understand this, you can stop comparing yourself to others and embrace your unique calling.</p>
+                    
+                    <p><strong>2. Your Worth Is Not Based on Performance</strong><br>
+                    Society teaches us that our value comes from achievements, popularity, or appearance. But God's love for you isn't based on what you do or how you look. You are valuable simply because you are His child. This truth frees you from the exhausting pursuit of validation.</p>
+                    
+                    <p><strong>3. Your Past Doesn't Define Your Future</strong><br>
+                    Maybe you've made mistakes. Maybe you've experienced pain or rejection. These experiences have shaped you, but they don't define you. God specializes in redemption—taking broken pieces and creating something beautiful.</p>
+                    
+                    <div class="media-section">
+                        <h4>📹 Video: Identity in Christ</h4>
+                        <div class="media-placeholder">🎥</div>
+                        <p style="font-size: 0.9rem; color: #666;">A powerful message on understanding your identity from a biblical perspective.</p>
+                    </div>
+                    
+                    <div class="media-section">
+                        <h4>🖼️ Reflection Images</h4>
+                        <div class="media-placeholder">🖼️</div>
+                        <p style="font-size: 0.9rem; color: #666;">Visual reminders of who you are in Christ.</p>
+                    </div>
+                    
+                    <p><strong>Reflection Questions:</strong></p>
+                    <ul style="margin-left: 2rem; margin-top: 1rem;">
+                        <li>How do I currently view myself?</li>
+                        <li>What voices have influenced my self-perception?</li>
+                        <li>Am I basing my worth on external factors or on God's truth?</li>
+                    </ul>
+                `
+            },
+            {
+                id: 2,
+                title: "Chapter 2: Understanding God's Call",
+                emoji: "📞",
+                description: "Discover how to recognize and respond to God's unique calling on your life. Learn to discern His voice and direction.",
+                content: `
+                    <h3>Understanding God's Call</h3>
+                    <p>Every person has a calling—a unique purpose that God has designed specifically for them. But how do you discover what that calling is? And how do you know if you're on the right path?</p>
+                    
+                    <p>Many young people feel pressure to have their entire lives figured out. They think God's call is like a detailed roadmap, showing every turn they'll make. But God's calling is more like a journey where He reveals the next step as you walk in faith.</p>
+                    
+                    <p><strong>Signs You're Walking in Your Calling:</strong></p>
+                    
+                    <p><strong>1. Passion and Purpose Align</strong><br>
+                    God often places desires in your heart that align with His purposes. What are you naturally drawn to? What problems do you want to solve? These passions can be indicators of your calling.</p>
+                    
+                    <p><strong>2. Your Gifts Are Being Used</strong><br>
+                    God equips you for your calling. If you're walking in it, you'll find opportunities to use your talents and abilities in meaningful ways. You won't feel like you're forcing something that doesn't fit.</p>
+                    
+                    <p><strong>3. You're Making an Impact</strong><br>
+                    When you're in your calling, your life produces fruit. You see lives changed, communities strengthened, and the kingdom of God advanced through your efforts.</p>
+                    
+                    <div class="media-section">
+                        <h4>🎵 Audio Devotional: Hearing God's Voice</h4>
+                        <div class="media-placeholder">🎧</div>
+                        <p style="font-size: 0.9rem; color: #666;">A guided meditation on discerning God's direction for your life.</p>
+                    </div>
+                    
+                    <p><strong>Remember:</strong> Your calling isn't always about a specific job or career. It's about living with purpose in every season of life. Whether you're a student, an employee, or exploring your options, you can walk in your calling by being faithful where God has placed you right now.</p>
+                `
+            },
+            {
+                id: 3,
+                title: "Chapter 3: Building Strong Foundations",
+                emoji: "🏗️",
+                description: "Learn how to build spiritual, character, and relational foundations that will support you throughout your life journey.",
+                content: `
+                    <h3>Building Strong Foundations</h3>
+                    <p>A building is only as strong as its foundation. The same is true for your life. The decisions you make now, the habits you form, and the values you establish will shape your future in profound ways.</p>
+                    
+                    <p>Think about the areas of life where you need a solid foundation:</p>
+                    
+                    <p><strong>Spiritual Foundation</strong><br>
+                    Your relationship with God is the cornerstone. Regular prayer, reading Scripture, and being part of a faith community aren't just religious activities—they're essential disciplines that keep you connected to your source of strength and wisdom.</p>
+                    
+                    <p><strong>Character Foundation</strong><br>
+                    Integrity, honesty, compassion, self-discipline—these character traits are built through daily choices. Every time you choose to do the right thing, even when it's hard, you're laying another brick in your foundation.</p>
+                    
+                    <p><strong>Relational Foundation</strong><br>
+                    The people you surround yourself with matter. Choose friends who challenge you to grow, mentors who guide you, and relationships that honor God. Avoid connections that pull you away from your values.</p>
+                    
+                    <div class="media-section">
+                        <h4>📹 Video: Building Habits That Last</h4>
+                        <div class="media-placeholder">🎥</div>
+                        <p style="font-size: 0.9rem; color: #666;">Practical strategies for developing spiritual disciplines.</p>
+                    </div>
+                    
+                    <p><strong>Practical Steps:</strong></p>
+                    <ol style="margin-left: 2rem; margin-top: 1rem;">
+                        <li>Start each day with prayer and Scripture reading</li>
+                        <li>Find an accountability partner who shares your values</li>
+                        <li>Identify one character trait to work on this month</li>
+                        <li>Evaluate your current relationships—are they building you up?</li>
+                    </ol>
+                `
+            },
+            {
+                id: 4,
+                title: "Chapter 4: Overcoming Challenges",
+                emoji: "💪",
+                description: "Face life's obstacles with faith and resilience. Discover practical strategies for overcoming the unique challenges of young adulthood.",
+                content: `
+                    <h3>Overcoming Challenges</h3>
+                    <p>Life will throw challenges your way—it's inevitable. But challenges aren't meant to break you; they're opportunities for growth, refinement, and strengthening your faith.</p>
+                    
+                    <p>Young adulthood comes with unique pressures: academic stress, peer pressure, family expectations, romantic relationships, career decisions, and navigating a rapidly changing world. It can feel overwhelming.</p>
+                    
+                    <p><strong>How to Face Challenges with Faith:</strong></p>
+                    
+                    <p><strong>1. Remember Who Goes Before You</strong><br>
+                    You're not facing challenges alone. God promises to be with you in every situation. When you feel overwhelmed, pause and acknowledge His presence. He's already in your tomorrow, preparing the way.</p>
+                    
+                    <p><strong>2. Learn from Every Experience</strong><br>
+                    Every challenge teaches you something. Failed a test? You learned what doesn't work. Lost a friendship? You discovered what you value in relationships. Faced rejection? You built resilience. Growth happens in the struggle.</p>
+                    
+                    <p><strong>3. Seek Wise Counsel</strong><br>
+                    You don't have to figure everything out alone. Talk to trusted mentors, pastors, or counselors. Their experience and outside perspective can provide clarity when you're stuck.</p>
+                    
+                    <div class="media-section">
+                        <h4>🎵 Audio: Testimonies of Overcoming</h4>
+                        <div class="media-placeholder">🎧</div>
+                        <p style="font-size: 0.9rem; color: #666;">Real stories from young adults who faced and conquered their challenges.</p>
+                    </div>
+                    
+                    <div class="media-section">
+                        <h4>🖼️ Scripture Cards for Difficult Times</h4>
+                        <div class="media-placeholder">🖼️</div>
+                        <p style="font-size: 0.9rem; color: #666;">Bible verses to encourage you during trials.</p>
+                    </div>
+                    
+                    <p><strong>Action Step:</strong> Identify one challenge you're currently facing. Write down three lessons you've already learned from it, and three ways God might use this situation for your growth.</p>
+                `
+            },
+            {
+                id: 5,
+                title: "Chapter 5: Living with Purpose Daily",
+                emoji: "🌟",
+                description: "Transform your everyday life into a purposeful journey. Learn daily practices that align with your calling and values.",
+                content: `
+                    <h3>Living with Purpose Daily</h3>
+                    <p>Purpose isn't just a destination—it's a way of living. You don't have to wait until you "figure everything out" to start living purposefully. Every day presents opportunities to make choices that align with your values and calling.</p>
+                    
+                    <p>Living with purpose means being intentional about how you spend your time, energy, and resources. It means asking yourself: "Does this activity, relationship, or commitment move me closer to who God is calling me to be?"</p>
+                    
+                    <p><strong>Daily Habits of Purposeful Living:</strong></p>
+                    
+                    <p><strong>Morning Intention Setting</strong><br>
+                    Start each day by asking God to guide you. Set an intention for how you want to show up—maybe it's being patient, generous, or courageous. Throughout the day, check in with yourself: "Am I living out my intention?"</p>
+                    
+                    <p><strong>Mindful Presence</strong><br>
+                    Be fully present in whatever you're doing. Whether you're studying, working, spending time with family, or serving others, give it your full attention. God often speaks and works in ordinary moments when we're paying attention.</p>
+                    
+                    <p><strong>Evening Reflection</strong><br>
+                    Before bed, take a few minutes to reflect. What went well today? Where did you see God at work? What could you improve tomorrow? This practice builds self-awareness and keeps you growing.</p>
+                    
+                    <div class="media-section">
+                        <h4>📹 Video: A Day in the Life of Purpose</h4>
+                        <div class="media-placeholder">🎥</div>
+                        <p style="font-size: 0.9rem; color: #666;">See how young adults incorporate purpose into their daily routines.</p>
+                    </div>
+                    
+                    <p><strong>Remember:</strong> Small, consistent actions compound over time. You don't need to make massive changes overnight. Focus on making today count, and watch how your life transforms one purposeful day at a time.</p>
+                `
+            }
+        ];
+
+        function openBook() {
+            document.getElementById('chapterSelection').classList.add('active');
+            loadChaptersGrid();
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeChapterSelection() {
+            document.getElementById('chapterSelection').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        function loadChaptersGrid() {
+            const chaptersGrid = document.getElementById('chaptersGrid');
+            chaptersGrid.innerHTML = chapters.map(chapter => `
+                <div class="chapter-card" onclick="openChapterReader(${chapter.id})">
+                    <div class="chapter-card-image">${chapter.emoji}</div>
+                    <div class="chapter-card-content">
+                        <h4>${chapter.title}</h4>
+                        <p>${chapter.description}</p>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function openChapterReader(chapterId) {
+            document.getElementById('chapterSelection').classList.remove('active');
+            document.getElementById('bookReader').style.display = 'block';
+            loadChapterList();
+            loadChapter(chapterId);
+        }
+
+        function closeBook() {
+            document.getElementById('bookReader').style.display = 'none';
+            document.getElementById('chapterMenu').classList.remove('active');
+            document.getElementById('chapterSelection').classList.add('active');
+        }
+
+        function loadChapterList() {
+            const chapterList = document.getElementById('chapterList');
+            chapterList.innerHTML = chapters.map(chapter => `
+                <li onclick="loadChapter(${chapter.id})" data-chapter="${chapter.id}">
+                    ${chapter.title}
+                </li>
+            `).join('');
+        }
+
+        function loadChapter(chapterId) {
+            const chapter = chapters.find(c => c.id === chapterId);
+            if (chapter) {
+                document.getElementById('readerContent').innerHTML = chapter.content;
+                
+                // Update active chapter in menu
+                document.querySelectorAll('#chapterList li').forEach(li => {
+                    li.classList.remove('active');
+                    if (parseInt(li.dataset.chapter) === chapterId) {
+                        li.classList.add('active');
+                    }
+                });
+                
+                // Close menu on mobile after selection
+                if (window.innerWidth <= 768) {
+                    document.getElementById('chapterMenu').classList.remove('active');
+                }
+                
+                // Scroll to top of content
+                document.getElementById('readerContent').scrollTop = 0;
+            }
+        }
+
+        function toggleChapterMenu() {
+            document.getElementById('chapterMenu').classList.toggle('active');
+        }
+
+        function handleSubmit(event) {
+            event.preventDefault();
+            alert('Thank you for your message! We will get back to you soon.');
+            event.target.reset();
+        }
+
+        // Close chapter menu when clicking outside on mobile
+        document.addEventListener('click', function(event) {
+            const menu = document.getElementById('chapterMenu');
+            const menuButton = document.querySelector('.menu-icon');
+            
+            if (menu.classList.contains('active') && 
+                !menu.contains(event.target) && 
+                event.target !== menuButton) {
+                menu.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
